@@ -1,0 +1,112 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Solución a las preguntas 1 a 5
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <b>Pregunta 1</b><br>
+        La paz es buena.
+    </p>
+    {% if player.question_1 == Constants.answer_q1 %}
+    <p class="text-success">
+    Su respuesta {{player.question_1}} a la pregunta 1 es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Su respuesta {{player.question_1}} a la pregunta 1 es incorrecta.
+    </p>
+    {% endif %}
+
+    <p>
+        <strong>Recuerde que...</strong><br>
+        La paz es buena.<br>
+    </p>
+
+
+    <p>
+        <b>Pregunta 2</b><br>
+        La paz es buena.
+    </p>
+    {% if player.question_2 == Constants.answer_q2 %}
+    <p class="text-success">
+    Su respuesta {{player.question_2}} a la pregunta 2 es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Su respuesta {{player.question_2}} a la pregunta 2 es incorrecta.
+    </p>
+    {% endif %}
+
+    <p>
+        <strong>Recuerde que...</strong><br>
+        La paz es buena.<br>
+    </p>
+
+
+    <p>
+        <b>Pregunta 3</b><br>
+        La paz es buena.
+    </p>
+    {% if player.question_3 == Constants.answer_q3 %}
+    <p class="text-success">
+    Su respuesta {{player.question_3}} a la pregunta 3 es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Su respuesta {{player.question_3}} a la pregunta 3 es incorrecta.
+    </p>
+    {% endif %}
+
+    <p>
+        <strong>Recuerde que...</strong><br>
+        La paz es buena.<br>
+    </p>
+
+
+    <p>
+        <b>Pregunta 4</b><br>
+        La paz es buena.
+    </p>
+    {% if player.question_4 == Constants.answer_q4 %}
+    <p class="text-success">
+    Su respuesta {{player.question_4}} a la pregunta 4 es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Su respuesta {{player.question_4}} a la pregunta 4 es incorrecta.
+    </p>
+    {% endif %}
+
+    <p>
+        <strong>Recuerde que...</strong><br>
+        La paz es buena.<br>
+    </p>
+
+
+    <p>
+        <b>Pregunta 5</b><br>
+        La paz es buena.
+    </p>
+    {% if player.question_5 == Constants.answer_q5 %}
+    <p class="text-success">
+    Su respuesta {{player.question_5}} a la pregunta 5 es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Su respuesta {{player.question_5}} a la pregunta 5 es incorrecta.
+    </p>
+    {% endif %}
+
+    <p>
+        <strong>Recuerde que...</strong><br>
+        La paz es buena.<br>
+    </p>
+
+
+    {% next_button %}
+
+{% endblock %}

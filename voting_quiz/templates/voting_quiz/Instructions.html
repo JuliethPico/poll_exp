@@ -1,0 +1,62 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instrucciones
+    </h3>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+    <p>
+        A continuación usted encontrará 10 preguntas sobre el
+        "Acuerdo final para terminar el conflicto y construir una paz estable y duradera."<br>
+        Para cada una de las preguntas usted deberá responder <strong>Falso</strong> ó <strong>Verdadero</strong>.<br>
+        Por favor responda <strong>Verdadero</strong> si cree que la afirmación <strong>si</strong>
+        corresponde a lo acordado entre el gobierno y las FARC según el documento del Acuerdo.<br>
+        Por favor responda <strong>Falso</strong> si cree que la afirmación <strong>no</strong>
+        corresponde a lo acordado entre el gobierno y las FARC según el documento del Acuerdo.<br>
+        Cuando termine de responder las 10 preguntas usted podrá leer una explicación, para cada pregunta,
+        del por qué la respuesta es <strong>Verdadero</strong> o <strong>Falso</strong>.<br>
+        <br>
+        Según el número de respuestas correctas se le asignará un puntaje.<br>
+        Este puntaje lo podrá transformar en votos de acuerdo a la siguiente tabla:<br>
+    </p>
+
+    {% if player.treatment == 1 %}
+    <table border=1 frame=void rules=rows class="table-condensed" style="width:500px; margin-top:20px;">
+        <tr>
+            <td>Puntaje en la prueba<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>10</td>
+        </tr>
+
+        <tr>
+            <td>Número de votos<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>10</td>
+        </tr>
+    </table>
+
+    {% elif player.treatment == 2 %}
+        <table border=1 frame=void rules=rows class="table-condensed" style="width:500px; margin-top:20px;">
+        <tr>
+            <td>Puntaje en la prueba<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>10</td>
+        </tr>
+
+        <tr>
+            <td>Número de votos<td>0<td>0<td>0<td>0<td>0<td>5<td>5<td>5<td>5<td>5<td>5</td>
+        </tr>
+    </table>
+
+    {% elif player.treatment == 3 %}
+        <table border=1 frame=void rules=rows class="table-condensed" style="width:500px; margin-top:20px;">
+        <tr>
+            <td>Puntaje en la prueba<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>10</td>
+        </tr>
+
+        <tr>
+            <td>Número de votos<td>0<td>2.2<td>3.2<td>3.9<td>4.5<td>5.0<td>5.5<td>5.9<td>6.3<td>6.7<td>7.1</td>
+        </tr>
+    </table>
+
+    {% endif %}
+
+</div>

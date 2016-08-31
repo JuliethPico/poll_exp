@@ -1,0 +1,41 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Preguntas 6 a 10
+{% endblock %}
+
+{% block content %}
+    <p>
+        Pregunta 6
+    </p>
+
+    {% formfield player.question_6 with label="Falso/Verdadero" %}
+
+    <p>
+        Pregunta 7
+    </p>
+
+    {% formfield player.question_7 with label="Falso/Verdadero" %}
+
+    <p>
+        Pregunta 8
+    </p>
+
+    {% formfield player.question_8 with label="Falso/Verdadero" %}
+
+    <p>
+        Pregunta 9
+    </p>
+
+    {% formfield player.question_9 with label="Falso/Verdadero" %}
+
+    <p>
+        Pregunta 10
+    </p>
+
+    {% formfield player.question_10 with label="Falso/Verdadero" %}
+
+    {% next_button %}
+
+{% endblock %}

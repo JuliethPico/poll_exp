@@ -1,0 +1,25 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Votación
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        El número de respuestas correctas es {{ player.score|floatformat }}.<br>
+        Para este número de aciertos le corresponden {{ player.num_votos|floatformat:1 }} votos que puede asignar a continuación.<br>
+    </p>
+
+    <p>
+        <strong>¿Apoya usted el acuerdo final para terminar el conflicto y construir una paz estable y duradera?</strong>
+    </p>
+
+    {% formfield player.votacion with label="" %}
+
+    {% next_button %}
+
+{% endblock %}
+
+

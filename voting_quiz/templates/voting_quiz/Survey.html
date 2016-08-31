@@ -1,0 +1,40 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    ¡Gracias por su participación!
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Queremos hacerle unas últimas preguntas sobre usted y sobre este ejercicio.<br>
+        Si no desea responder alguna pregunta puede dejarla en blanco y continuar con la siguiente.<br>
+    </p>
+
+    <p>Género: </p>    {% formfield player.gender %}
+
+    <p>Año de nacimiento: </p>    {% formfield player.year %}
+
+    <p>Máximo nivel de educación alcanzado: </p>    {% formfield player.education %}
+
+    <p>¿Por quién votó en la segunda vuelta de las pasadas elecciones presidenciales?<br>
+        Si no lo hizo, por favor seleccione la opción "No voté."
+    </p>    {% formfield player.voto_presidenciales %}
+
+    <p>¿Se considera que tiene alguna afinidad política? </p>    {% formfield player.political %}
+
+    <p>En promedio, ¿Cuántas preguntas cree que responderán acertadamente otras personas que hagan esta prueba? </p>    {% formfield player.beliefs_correct %}
+
+    <p>¿Queda satisfecho con la explicación provista para cada uno de los ítems de esta prueba? </p>    {% formfield player.convinced %}
+
+    <p>En el plebiscito del próximo 2 de octubre, ¿Qué porcentaje de los votos cree que obtendrá el <b>Sí</b>? </p>    {% formfield player.beliefs_election %}
+
+    <p>Si usted desea que le sean enviados los resultados de este ejercicio por favor escriba su correo electrónico:</p>    {% formfield player.email %}
+
+    <p><i>Las direcciones de correo electrónico aquí registradas no serán utilizadas con ningún otro fin.</i></p>
+
+    {% next_button %}
+
+{% endblock %}
+

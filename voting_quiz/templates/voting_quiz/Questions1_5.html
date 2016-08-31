@@ -1,0 +1,49 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Preguntas 1 a 5
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        <b>Pregunta 1</b><br>
+        La paz es buena.
+    </p>
+
+    {% formfield player.question_1 with label="" %}
+
+    <p>
+        <b>Pregunta 2</b><br>
+        La paz es buena.
+    </p>
+
+    {% formfield player.question_2 with label="" %}
+
+    <p>
+        <b>Pregunta 3</b><br>
+        La paz es buena.
+    </p>
+
+    {% formfield player.question_3 with label="" %}
+
+    <p>
+        <b>Pregunta 4</b><br>
+        La paz es buena.
+    </p>
+
+    {% formfield player.question_4 with label="" %}
+
+    <p>
+        <b>Pregunta 5</b><br>
+        La paz es buena.
+    </p>
+
+    {% formfield player.question_5 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}
