@@ -15,7 +15,8 @@ from otree.models import BaseSubsession, BaseGroup, BasePlayer
 author = 'Cesar Mantilla'
 
 doc = """
-Your app description
+Este es un experimento que contiene una prueba sobre qué tanto sabe de
+los acuerdos del proceso de paz entre el gobierno colombiano y las FARC.
 """
 
 
