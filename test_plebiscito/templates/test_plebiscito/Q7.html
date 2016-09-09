@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 7
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Las Naciones Unidas serán las encargadas de retirar el armamento individual
+        de las Zonas Veredales Transitorias de Normalización (ZVTN) 180 días después de la Firma Final del Acuerdo.<br>
+    </p>
+
+    {% formfield player.question_7 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}

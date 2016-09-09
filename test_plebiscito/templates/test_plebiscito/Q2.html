@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 2
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Dentro de las instancias de acompañamiento internacional
+        en los diferentes puntos del acuerdo se encuentra Estados Unidos.<br>
+    </p>
+
+    {% formfield player.question_2 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}

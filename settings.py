@@ -144,6 +144,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 3,
         'app_sequence': ['voting_quiz'],
     },
+        {
+        'name': 'test_plebiscito',
+        'display_name': "Test del Plebiscito",
+        'num_demo_participants': 2,
+        'app_sequence': ['test_plebiscito'],
+    },
     # {
     #     'name': 'public_goods',
     #     'display_name': "Public Goods",

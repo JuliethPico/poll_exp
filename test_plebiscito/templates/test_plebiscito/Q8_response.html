@@ -1,0 +1,44 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 8
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        La concesión de amnistías o indultos extingue el derecho a las respectivas víctimas de ser reparadas.<br>
+    </p>
+    {% if player.question_8 == Constants.answer_q8 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        La Comisión para el Esclarecimiento de la Verdad, la Convivencia y la No Repetición
+        podrá conceder amnistías o indultos a exintegrantes de las FARC.
+        Sin embargo, esto no extingue el derecho a la reparación de las víctimas.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 136 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

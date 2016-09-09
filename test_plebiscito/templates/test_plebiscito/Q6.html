@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 6
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        La obtención o conservación de la personería jurídica de un partido político
+        no dependerá del umbral electoral sino del número de afiliados al partido.<br>
+    </p>
+
+    {% formfield player.question_6 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}

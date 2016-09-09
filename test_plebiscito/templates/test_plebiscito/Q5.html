@@ -1,0 +1,22 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 5
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        De las 297 páginas del documento que contiene el Acuerdo de Paz,
+        más de una tercera parte son anexos compuestos fundamentalmente
+        de protocolos de monitoreo y protocolos de seguridad.<br>
+    </p>
+
+    {% formfield player.question_5 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}

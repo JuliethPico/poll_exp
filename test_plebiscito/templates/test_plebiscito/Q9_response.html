@@ -1,0 +1,47 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 9
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Las sanciones impuestas a los exintegrantes de las FARC incluyen
+        funciones reparadoras y restauradoras, éstas son exclusivamente rurales.
+    </p>
+    {% if player.question_9 == Constants.answer_q9 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        También se contemplan funciones reparadoras y restauradoras de carácter urbano,
+        como programas de construcción y reparación de infraestructuras (escuelas, vías públicas,
+        centros de salud, viviendas, entre otras) y de acceso a agua potable y construcción de redes.
+        También se contemplan la limpieza y erradicación de restos explosivos de guerra,
+        municiones sin explotar y minas antipersonas.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 154 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

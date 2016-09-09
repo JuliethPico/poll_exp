@@ -1,0 +1,46 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 10
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Por dos períodos constitucionales comenzando en 2018, al partido político que constituyan las FARC-EP
+        se le garantizará un mínimo de 5 curules en Senado y un mínimo de 5 curules en la Cámara de Representantes.<br>
+    </p>
+    {% if player.question_10 == Constants.answer_q10 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Con el fin de facilitar la transición a la política legal, el Gobierno Nacional le garantizará
+        al partido político que constituyan las FARC-EP que podrá competir en igualdad de condiciones
+        por la totalidad de curules en Senado y Cámara. Adicionalmente, le garantizará un mínimo de 5
+        curules tanto en Senado como en Cámara.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 64 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

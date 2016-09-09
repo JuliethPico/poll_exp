@@ -1,0 +1,47 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 2
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Dentro de las instancias de acompañamiento internacional
+        en los diferentes puntos del acuerdo se encuentra Estados Unidos.<br>
+    </p>
+
+    {% if player.question_2 == Constants.answer_q2 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Estados Unidos hace parte del acompañamiento internacional
+        para el punto 3.2. del acuerdo “Garantías de Seguridad y Personal” y
+        para el punto 3.4. del acuerdo “Unidad especial de investigación y
+        lucha y desmantelamiento de organizaciones.”<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 189 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

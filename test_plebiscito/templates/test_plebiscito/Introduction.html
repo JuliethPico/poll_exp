@@ -1,0 +1,37 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    ¿Qué tan informado está del Acuerdo de Paz?
+{% endblock %}
+
+{% block content %}
+
+    {% if player.treatment != 3 %}
+
+    <p>
+    Con el siguiente test usted podrá evaluar qué tanto sabe acerca de los puntos acordados<br>
+    en el "Acuerdo final para terminar el conflicto y construir una paz estable y duradera."<br>
+    El test completo no le tomará más de 10 minutos.<br>
+    Más adelante realizaremos el sorteo de un iPhone entre todas las personas <br>
+    que hicieron click y respondieron a la encuesta que se encuentra al final del test.<br>
+    Le pedimos que a continuación lea las instrucciones y haga click en "Siguiente" una vez las haya comprendido.<br>
+    <br>
+    </p>
+        {% include Constants.instructions_template %}
+
+    {% else %}
+
+    <p>
+    Queremos conocer qué tanto sabe acerca de los puntos acordados<br>
+    en el "Acuerdo final para terminar el conflicto y construir una paz estable y duradera."<br>
+    Más adelante realizaremos el sorteo de un iPhone entre todas las personas <br>
+    que hicieron click y respondieron a la encuesta que se encuentra a continuación.<br>
+    </p>
+
+
+    {% endif %}
+
+    {% next_button %}
+
+{% endblock %}

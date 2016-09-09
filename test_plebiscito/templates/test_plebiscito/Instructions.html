@@ -1,0 +1,40 @@
+{% load otree_tags staticfiles %}
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instrucciones
+    </h3>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+    <p>
+        A continuación usted encontrará 10 preguntas sobre el
+        "Acuerdo final para terminar el conflicto y construir una paz estable y duradera."<br>
+        Para cada una de las preguntas usted deberá responder <strong>Falso</strong> ó <strong>Verdadero</strong>.<br>
+        <br>
+        Responda <strong>Verdadero</strong> si cree que la afirmación <strong>si</strong>
+        corresponde a lo acordado entre el gobierno y las FARC según el documento del Acuerdo.<br>
+        Responda <strong>Falso</strong> si cree que la afirmación <strong>no</strong>
+        corresponde a lo acordado entre el gobierno y las FARC según el documento del Acuerdo.<br>
+        <br>
+    </p>
+
+    {% if player.treatment == 1 %}
+    <p>
+        Tras responder a cada pregunta usted encontrará una explicación
+        del por qué la respuesta es <strong>Verdadero</strong> o <strong>Falso</strong>.<br>
+        <br>
+    </p>
+
+    {% elif player.treatment == 2 %}
+    <p>
+        Tras responder a cada pregunta usted será informado de la página del Acuerdo que indica
+        por qué la respuesta es <strong>Verdadero</strong> o <strong>Falso</strong>.<br>
+        <br>
+    </p>
+
+    {% endif %}
+
+</div>

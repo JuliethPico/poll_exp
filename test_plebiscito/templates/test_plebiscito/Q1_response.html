@@ -1,0 +1,49 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 1
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        El área total del que dispondrá el Fondo Nacional de Tierras que
+        creará el gobierno es equivalente al 40% de las tierras de uso
+        agropecuario en Colombia según el último censo agropecuario.
+    </p>
+
+    {% if player.question_1 == Constants.answer_q1 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Según el último censo agropecuario el país cuenta con
+        7.1 millones de hectáreas de uso agropecuario. El Fondo Nacional
+        de Tierras contará con 3 millones de hectáreas, es decir, un 40% del actual.
+        Esto no significa que el 40% de las tierras serán reasignadas,
+        pero tampoco significa que se aumentará a 10.1 millones de hectáreas cultivadas.
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 12 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

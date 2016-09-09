@@ -1,0 +1,46 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 3
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        El Gobierno de Colombia y las FARC-EP acordaron establecer
+        23 Zonas Veredales Transitorias de Normalización (ZVTN) y 8 campamentos.
+        Los integrantes de las FARC no pueden abandonar dichas
+        zonas durante los 180 días posteriores al cese al fuego definitivo.
+    </p>
+
+    {% if player.question_3 == Constants.answer_q3 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        La salida de integrantes de las FARC-EP está permitida. Sin embargo, deben realizarla sin armas y de civil.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 55 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

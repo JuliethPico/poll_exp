@@ -1,0 +1,46 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 6
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        La obtención o conservación de la personería jurídica de un partido político
+        no dependerá del umbral electoral sino del número de afiliados al partido.<br>
+    </p>
+    {% if player.question_6 == Constants.answer_q6 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        La eliminación del umbral electoral para conservar la personería jurídida como
+        partido político es una de las medidas contempladas en el Acuerdo de Paz para remover
+        los obstáculos de participación política y facilitar el tránsito de movimientos sociales
+        con vocación política a la formación de partidos.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 44 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

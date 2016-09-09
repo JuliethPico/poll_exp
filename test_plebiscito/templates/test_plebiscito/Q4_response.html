@@ -1,0 +1,49 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 4
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        El Acuerdo contempla la creación del Programa Nacional Integral
+        de Sustitución de Cultivos de Uso Ilícito (PNIS), en el que a cultivadores
+        y recolectores de cultivos ilícitos que entren a un plan se sustitución se
+        les concedan los mismos beneficios de renta básica que a los exintegrantes de las FARC-EP.
+    </p>
+    {% if player.question_4 == Constants.answer_q4 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        El PNIIS contempla como beneficios a los cultivadores que entren al plan
+        de sustitución una asistencia alimentaria por un año, el establecimiento
+        de huertas caseras y la entrega de especies menores, y la integración a
+        proyectos de generación de ingresos rápidos. Estos últimos incluyen
+        cultivos de ciclo corto, piscicultura y avicultura.
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 101 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

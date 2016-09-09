@@ -1,0 +1,45 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 7
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Las Naciones Unidas serán las encargadas de retirar el armamento individual
+        de las Zonas Veredales Transitorias de Normalización (ZVTN) 180 días después de la Firma Final del Acuerdo.<br>
+    </p>
+    {% if player.question_7 == Constants.answer_q7 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Las Naciones Unidas estarán encargas de monitorear el proceso de
+        entrega de armas y de retirarlo de las zonas veredales.
+        Las Naciones Unidas procederán posteriormente a comunicarlo al Gobierno Nacional y a la opinión pública.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 61 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

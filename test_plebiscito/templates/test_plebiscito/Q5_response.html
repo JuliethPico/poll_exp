@@ -1,0 +1,47 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 5
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        De las 297 páginas del documento que contiene el Acuerdo de Paz,
+        más de una tercera parte son anexos compuestos fundamentalmente
+        de protocolos de monitoreo y protocolos de seguridad.<br>
+    </p>
+    {% if player.question_5 == Constants.answer_q5 %}
+    <p class="text-success">
+    Usted respondió "{{ response }}". Esta respuesta es correcta.
+    </p>
+    {% else %}
+    <p class="text-danger">
+    Usted respondió "{{ response }}". Esta respuesta es incorrecta.
+    </p>
+    {% endif %}
+
+    {% if player.treatment == 1 %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        A partir de la página 193 están listados los protocolos de monitoreo y seguridad,
+        los procedimientos de registro y marcado de las armas individuales,
+        y los textos que se tramitarán como Acto Legislativo en Senado y Cámara
+        concernientes al Acuerdo de paz.<br>
+        <br>
+    </p>
+    {% else %}
+    <p>
+        <strong>¿Por qué esta respuesta?</strong><br>
+        <br>
+        Ver página 193 del Acuerdo de Paz.<br>
+        <br>
+    </p>
+    {% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}

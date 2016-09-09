@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Pregunta 8
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        La concesión de amnistías o indultos extingue el derecho a las respectivas víctimas de ser reparadas.<br>
+    </p>
+
+    {% formfield player.question_8 with label="" %}
+
+    {% next_button %}
+
+
+
+{% endblock %}

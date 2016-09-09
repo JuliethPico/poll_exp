@@ -1,0 +1,61 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    ¡Gracias por su participación!
+{% endblock %}
+
+{% block content %}
+
+    {% if player.treatment != 3 %}
+    <p> Usted respondió correctamente {{ player.score|floatformat }} de las 10 preguntas.</p>
+
+        {% if player.lab_invitation <= Constants.threshold_lab %}
+        <p> Hemos seleccionado al {{ Constants.threshold_lab }}% de quienes completaron el Test
+            para invitarlos al laboratorio de Economía Experimental de la Universidad para responder
+            otro Test sobre el Acuerdo y ganarse entre $5.000 y $25.000 pesos, dependiendo del
+            número de respuestas correctas.<br>
+            <br>
+            <b>¡Usted está dentro de los seleccionados!</b><br>
+            <br>
+            Si está interesado por favor haga click aquí para continuar con la inscripción
+            en el horario que más le convenga:
+            <br>
+            <br>
+        </p>
+        {% endif %}
+
+    {% endif %}
+
+
+
+    <p>
+        Queremos hacerle unas últimas preguntas sobre usted y sobre este ejercicio.<br>
+    </p>
+
+    <p>Género: </p>    {% formfield player.gender %}
+
+    <p>Año de nacimiento: </p>    {% formfield player.year %}
+
+    <p>¿Cuál es su status actual con la universidad?: </p>    {% formfield player.status %}
+
+    <p>¿Por quién votó en la segunda vuelta de las pasadas elecciones presidenciales?<br>
+        Si no lo hizo, por favor seleccione la opción "No voté."
+    </p>    {% formfield player.voto_presidenciales %}
+
+    <p>¿Se considera que tiene alguna afinidad política? </p>    {% formfield player.political %}
+
+    <p>En promedio, ¿Cuántas preguntas cree que responderán acertadamente otras personas que hagan esta prueba? </p>    {% formfield player.beliefs_correct %}
+
+    <p>¿Queda satisfecho con la explicación provista para cada uno de los ítems de esta prueba? </p>    {% formfield player.convinced %}
+
+    <p>En el plebiscito del próximo 2 de octubre, ¿Qué porcentaje de los votos cree que obtendrá el <b>Sí</b>? </p>    {% formfield player.beliefs_election %}
+
+    <p>Por favor escriba su correo electrónico:</p>    {% formfield player.email %}
+
+    <p><i>Las direcciones de correo electrónico aquí registradas no serán utilizadas con ningún otro fin.</i></p>
+
+    {% next_button %}
+
+{% endblock %}
+
